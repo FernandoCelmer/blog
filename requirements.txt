@@ -1,2 +1,3 @@
 mkdocs==1.4.2
 mkdocs-simple-blog==0.0.1
+python-dotenv==0.21.0
