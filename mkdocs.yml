@@ -5,6 +5,7 @@ copyright: Fernando Celmer
 nav:
     - Home: https://www.fernandocelmer.com/
     - Blog: index.md
+    - About: https://www.linkedin.com/in/fernando-celmer/
 
 theme:
   name: simple-blog
