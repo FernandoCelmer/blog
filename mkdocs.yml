@@ -1,6 +1,4 @@
 site_name: Fernando Celmer
-repo_name: FernandoCelmer/mkdocs-simple-blog
-repo_url: https://github.com/FernandoCelmer/mkdocs-simple-blog
 site_url: https://www.fernandocelmer.com/
 copyright: Fernando Celmer
 
@@ -10,5 +8,4 @@ nav:
 
 theme:
   name: simple-blog
-  logo: assets/favicon.png
   favicon: assets/favicon.ico
