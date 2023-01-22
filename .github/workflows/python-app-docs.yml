@@ -22,7 +22,7 @@ jobs:
         pip install -r requirements.txt --no-cache-dir
     - name: 📘 Build Docs
       run: |
-        mkdocs build
+        mkdocs build -d blog
     - name: 📘 Update Docs
       env:
         FTP_HOST: ${{ secrets.FTP_HOST }}

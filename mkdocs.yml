@@ -10,3 +10,18 @@ nav:
 theme:
   name: simple-blog
   favicon: assets/favicon.ico
+  theme_style: light
+  site_name_style: normal
+  title_style: bold
+  components:
+    site_name: false
+    title: true
+    menu: true
+    preview: true
+    footer: true
+
+extra_css:
+  - css/extra.css
+
+extra_javascript:
+  - js/extra.js

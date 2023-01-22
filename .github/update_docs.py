@@ -25,8 +25,11 @@ def ftp_run():
     except Exception:
         pass
 
-    for currentpath, folders, files in os.walk('site'):
-        host_path = currentpath.replace("site", ftp_path)
+    file = open('index.html','rb')
+    session.storbinary(f'STOR index.html', file)
+
+    for currentpath, folders, files in os.walk('blog'):
+        host_path = currentpath.replace("blog", ftp_path)
 
         for folder in folders:
             path_folder = os.path.join(host_path, folder)
