@@ -23,14 +23,15 @@
 
 #### IndexOffy
 - [tor-network-dataset](https://github.com/IndexOffy/tor-network-dataset) - Working
-- [tor-network-link](https://github.com/IndexOffy/tor-network-link) - Working
+- [tor-network-api-search](https://github.com/IndexOffy/tor-network-api-search) - Working
+- [tor-network-core](https://github.com/IndexOffy/tor-network-core) - Working
 - [tor-network-api](https://github.com/IndexOffy/tor-network-api) - Working
 - [indexoffy_api](https://github.com/IndexOffy/indexoffy_api) - is no longer updated
 
 #### UpyExplorer
 - [upy-rabbitmq](https://github.com/UpyExplorer/upy-rabbitmq) - I still update
 - [upy-error](https://github.com/UpyExplorer/upy-error) - I still update
-- [upy-application](https://github.com/UpyExplorer/upy-application) - I stopped updating but it's working
+- [upy-application](https://github.com/UpyExplorer/upy-application) - I stopped updating
 - [upy-service](https://github.com/UpyExplorer/upy-service) - is no longer updated
 - [upy-api](https://github.com/UpyExplorer/upy-api) - is no longer updated
 - [upy-process](https://github.com/UpyExplorer/upy-process) - is no longer updated
