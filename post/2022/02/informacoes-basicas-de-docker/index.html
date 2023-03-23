@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            
+            
+            <link rel="canonical" href="https://www.fernandocelmer.com/post/2022/02/informacoes-basicas-de-docker/">
+
+            
+                <link  rel="icon" type="image/x-icon" href="../../../../assets/favicon.ico">
+            
+            <title>Informacoes basicas de docker - Fernando Celmer</title>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../../../assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="../../../../assets/stylesheets/theme.css">
+            <link rel="stylesheet" href="../../../../assets/stylesheets/styles.css">
+                <link href="../../../../css/extra.css" rel="stylesheet">
+            
+            
+                
+            
+    </head>
+
+    <body>
+        <div class="container py-3">
+            <header>
+                    <!-- block header -->
+<nav class="navbar navbar-expand-xl border-bottom">
+    <div class="container-fluid">
+        
+        <span class="fs-4 bold title-color site-name" id="title" style="text-transform: uppercase;">Fernando Celmer</span>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+            aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+            <ul class="navbar-nav">
+                <!-- block menu -->
+                <li class="nav-item">
+                    <!-- block menu -->
+<li class="nav-item">
+    <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="
+                    nav-link text-gray text-decoration-none" href="https://www.fernandocelmer.com/">[Home]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="
+                    nav-link text-gray text-decoration-none" href="../../../..">[Blog]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="
+                    nav-link text-gray text-decoration-none" href="../../../../projects/">[Projects]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="
+                    nav-link text-gray text-decoration-none" href="https://www.linkedin.com/in/fernando-celmer/">[About]</a>
+                </li>
+    </ul>
+</li>
+<!-- endblock -->
+                </li>
+                <!-- endblock -->
+
+                <!-- block source -->
+                <li class="nav-item">
+                    
+                </li>
+                <!--  endblock -->
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--  endblock -->
+            </header>
+
+            <main>
+                    <!-- block content -->
+<section class="container post">
+    <article>
+        <header>
+            <h1 class="title">Informacoes basicas de docker</h1>
+        </header>
+        <p><p>20 DE FEVEREIRO, 2022 [<strong>#01</strong>]</p>
+<hr />
+<h2 id="introducao">Introdução</h2>
+<p>Docker é uma ferramente opensource escrito em GO para gerenciamente e criação de containers.</p>
+<p><strong>Servidor Físico / Máquina Virtual / Container</strong></p>
+<p>Servidor é uma máquina física qualquer onde você instala um sistema operacional baseado em linux. Quando é maquina virtual, você executa um novo sistema operacional dentro do seu sistema operacional que já esta sendo executado na sua maquina física. O container não precisa rodar um novo sistema operacional dentro do sistema operacional da minha maquina física. Quando é utilizado uma maquina virtual, ela contem o seu próprio kernel, as suas próprias bibliotecas etc. Em um container não, quando eu estou utilizando o container, somente o processo que eu pedir vai estar em execução. As bibliotecas e os binarios, ele compartilha da maquina host.</p>
+<h4 id="comandos-basicos">Comandos Básicos</h4>
+<ul>
+<li>Faz a listagem dos containers que estão ativos no momento.</li>
+</ul>
+<pre><code>$ sudo docker ps
+</code></pre>
+<hr />
+<ul>
+<li>Com o parâmetro -a é feito a listagem de todos os containers inativos.</li>
+</ul>
+<pre><code>sudo docker ps -a
+</code></pre>
+<hr />
+<ul>
+<li>Cria um novo container com ubuntu. Pode ser colocado parametros adicionais como a porta que vai ser redirecionado esse container.</li>
+</ul>
+<pre><code>sudo docker run -i -t -p 8080:80 ubuntu:14.10
+</code></pre>
+<hr />
+<ul>
+<li>Para a execução de um container.</li>
+</ul>
+<pre><code>sudo docker stop CONTAINER_ID
+</code></pre>
+<hr />
+<ul>
+<li>Cria uma imagem. O bom é sempre realizar o versionamento da imagem criada recentemente.</li>
+</ul>
+<pre><code>sudo docker commit CONTAINER_ID [qualquer_nome:1.0]
+</code></pre>
+<hr />
+<ul>
+<li>Executa comandos dentro do conteiner.</li>
+</ul>
+<pre><code>sudo docker exec CONTAINER_ID [command]
+</code></pre>
+<hr />
+<ul>
+<li>Conecta a um terminal linux dentro do container.</li>
+</ul>
+<pre><code>sudo docker exec CONTAINER_ID /bin/bash
+</code></pre>
+<hr />
+<ul>
+<li>Retorna informações sobre determinado container.</li>
+</ul>
+<pre><code>sudo docker inspect CONTAINER_ID
+</code></pre>
+<hr />
+<ul>
+<li>Com esse comando eu consigo ver o quanto o meu container esta consumindo de CPU, memória RAM e rede.</li>
+</ul>
+<pre><code>sudo docker stats CONTAINER_ID
+</code></pre>
+<hr />
+<h4 id="diferencas">Diferenças</h4>
+<p><strong>Dockerfile</strong></p>
+<ul>
+<li>Dockerfile configura as imagens para um container.</li>
+</ul>
+<p><strong>Docker-Compose</strong></p>
+<ul>
+<li>Docker-compose configura as imagens para os containers e a conexão entre eles.</li>
+</ul>
+<hr />
+<p><strong>Mais informações</strong></p>
+<ul>
+<li><a href="https://docs.docker.com/compose/gettingstarted/">Docker Getting Started</a></li>
+<li><a href="https://cursos.alura.com.br/forum/topico-diferenca-entre-o-dockerfile-e-o-docker-compose-30250">Diferença entre o Dockerfile e o Docker-Compose</a></li>
+</ul></p>
+    </article>
+</section>
+<!-- endblock -->
+            </main>
+                <!-- block preview -->
+<!-- endblock -->
+                <!-- block footer -->
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+        <div class="col-12 col-md">
+                <!-- block copyright -->
+    <small class="d-block mb-3">Fernando Celmer</small>
+
+    <small class="d-block mb-3">
+        Made with
+        <a href="https://github.com/FernandoCelmer/mkdocs-simple-blog" target="_blank" rel="noopener">
+            Simple Blog for MkDocs
+        </a>
+    </small>
+
+<!-- endblock -->
+        </div>
+    </div>
+</footer>
+<!-- endblock -->
+        </div>
+    
+        <script src="../../../../assets/js/jquery-3.3.1.slim.min.js""></script>
+        <script src="../../../../assets/js/bootstrap.bundle.min.js""></script>
+        <script src="../../../../assets/js/theme.js""></script>
+    </body>
+
+</html>

@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            
+            
+            <link rel="canonical" href="https://www.fernandocelmer.com/post/2022/03/introducao-ao-rabbitmq-python/">
+
+            
+                <link  rel="icon" type="image/x-icon" href="../../../../assets/favicon.ico">
+            
+            <title>Introducao ao rabbitmq python - Fernando Celmer</title>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../../../assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="../../../../assets/stylesheets/theme.css">
+            <link rel="stylesheet" href="../../../../assets/stylesheets/styles.css">
+                <link href="../../../../css/extra.css" rel="stylesheet">
+            
+            
+                
+            
+    </head>
+
+    <body>
+        <div class="container py-3">
+            <header>
+                    <!-- block header -->
+<nav class="navbar navbar-expand-xl border-bottom">
+    <div class="container-fluid">
+        
+        <span class="fs-4 bold title-color site-name" id="title" style="text-transform: uppercase;">Fernando Celmer</span>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+            aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+            <ul class="navbar-nav">
+                <!-- block menu -->
+                <li class="nav-item">
+                    <!-- block menu -->
+<li class="nav-item">
+    <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="
+                    nav-link text-gray text-decoration-none" href="https://www.fernandocelmer.com/">[Home]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="
+                    nav-link text-gray text-decoration-none" href="../../../..">[Blog]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="
+                    nav-link text-gray text-decoration-none" href="../../../../projects/">[Projects]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="
+                    nav-link text-gray text-decoration-none" href="https://www.linkedin.com/in/fernando-celmer/">[About]</a>
+                </li>
+    </ul>
+</li>
+<!-- endblock -->
+                </li>
+                <!-- endblock -->
+
+                <!-- block source -->
+                <li class="nav-item">
+                    
+                </li>
+                <!--  endblock -->
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--  endblock -->
+            </header>
+
+            <main>
+                    <!-- block content -->
+<section class="container post">
+    <article>
+        <header>
+            <h1 class="title">Introducao ao rabbitmq python</h1>
+        </header>
+        <p><p>01 DE MARÇO, 2022 [<strong>#02</strong>]</p>
+<hr />
+<h2 id="introducao">Introdução</h2>
+<p>Este é um pequeno review sobre a ferramente de mensageria RabbitMQ.</p>
+<p>Para entender melhor sobre RabbitMQ primeiro é necessário entender o conceito de mensageria que é basicamente um modo de comunicação por meio de troca de mensagens e sendo gerenciados por um “Message Broker”, termo em inglês que define um software que possibilita que aplicativos, sistemas e serviços se comuniquem e troquem informações.</p>
+<h2 id="rabbitmq">RabbitMQ</h2>
+<p>Na documentação oficial do RabbitMQ tem um exemplo muito bom do conceito da ferramenta em si que seria um mediador/gerenciador de mensagens, simples assim. Pense no sistema sendo sendo como uma agência de correios. Quando você coloca uma correspondência em uma caixa postal, pode ter certeza de que o carteiro acabará entregando a correspondência ao seu destinatário. Nessa simples analogia o RabbitMQ é uma caixa postal e também a agência de correios que entregará a sua carta.</p>
+<h4 id="producing-produzir">“Producing” / Produzir</h4>
+<p><center></p>
+<p><img alt="IMAGEM-01 — [Producing] — Produzir" src="../x_img_02_01.png" /></p>
+<p><strong>IMAGEM-01 — [Producing] — Produzir</strong></p>
+<p></center></p>
+<p>Produzing termo que representa o envio de uma mensagem para que o software. Nesse nesse cenário poderíamos chamar esse software de produtor.</p>
+<h4 id="queues-fila">“Queues” / Fila</h4>
+<p><center></p>
+<p><img alt="IMAGEM-02 — [Queues] — Filas" src="../x_img_02_02.png" /></p>
+<p><strong>IMAGEM-02 — [Queues] — Filas</strong></p>
+<p></center></p>
+<p>São nas Queues ou Filas que ficam armazenadas as mensagens enviadas pelo software “produtor”. Agora estamos falando do que é executado dentro do servidor RabbitMQ que pode limitar-se pela sua memória e tamanho em disco disponibilizado pelo host.</p>
+<h4 id="exchanges-trocas">“Exchanges” / Trocas</h4>
+<p>Exchanges ou Trocas é o processo de distribuição das mensagens para as suas respectivas filas. O direcionamento das mensagens depende do algoritmo de roteamento usado que é especificado nas mensagens recebidas.</p>
+<h4 id="consumers-consumidores">“Consumers” / Consumidores</h4>
+<p><center></p>
+<p><img alt="IMAGEM-03 — [Consumers] — Consumidores" src="../x_img_02_03.png" /></p>
+<p><strong>IMAGEM-03 — [Consumers] — Consumidores</strong></p>
+<p></center></p>
+<p>Consumers são uma parte importante do esquema geral da estrutura do RabbitMQ, porque são eles, os “Consumidores” que irão executar determinados processos. É nesse momento que o processo descrito na mensagem é consumido e processado.</p>
+<h4 id="fluxo-basico">Fluxo Básico</h4>
+<p><center></p>
+<p><img alt="IMAGEM-04 — Diagrama simplificado do fluxo do RabbitMQ" src="../x_img_02_04.jpeg" /></p>
+<p><strong>IMAGEM-04 — Diagrama simplificado do fluxo do RabbitMQ</strong></p>
+<p></center></p>
+<h4 id="exemplo-em-python">Exemplo em Python</h4>
+<p><code>Send.py</code></p>
+<pre><code># coding=utf-8
+import pika
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
+rabbitmq_url = env(&quot;RABBITMQ_URL&quot;)
+
+params = pika.URLParameters(rabbitmq_url)
+connection = pika.BlockingConnection(params)
+
+channel = connection.channel()
+
+channel.queue_declare(queue='intro_rabbitmq')
+
+channel.basic_publish(exchange='', routing_key='intro_rabbitmq', body='Ola Mundo!')
+print(&quot; [x] Enviado 'Ola Mundo!'&quot;)
+connection.close()
+</code></pre>
+<p><code>Receive.py</code></p>
+<pre><code># coding=utf-8
+import pika, sys, os
+import environ
+
+def main():
+env = environ.Env()
+environ.Env.read_env()
+rabbitmq_url = env(&quot;RABBITMQ_URL&quot;)
+
+params = pika.URLParameters(rabbitmq_url)
+connection = pika.BlockingConnection(params)
+
+channel = connection.channel()
+
+channel.queue_declare(queue='intro_rabbitmq')
+
+def callback(ch, method, properties, body):
+    print(&quot; [x] Recebido %r&quot; % body)
+
+channel.basic_consume(queue='intro_rabbitmq', on_message_callback=callback, auto_ack=True)
+
+print(' [*] Esperando mensagem. Aperte CTRL+C para sair')
+channel.start_consuming()
+
+if name == 'main':
+try:
+main()
+except KeyboardInterrupt:
+print('Interrompido')
+try:
+sys.exit(0)
+except SystemExit:
+os._exit(0)
+</code></pre>
+<p>A maior parte deste conteúdo foi retirado do site oficial do RabbitMQ, para ter acesso a tópicos mais complexos acesse <a href="www.rabbitmq.com">www.rabbitmq.com</a>.</p>
+<hr />
+<p><strong>Mais informações</strong></p>
+<ul>
+<li><a href="https://www.rabbitmq.com/documentation.html">Rabbitmq Docs</a></li>
+<li><a href="https://www.ibm.com/br-pt/cloud/learn/message-brokers">Message brokers</a></li>
+<li><a href="https://gist.github.com/FernandoCelmer/9d7ca86b55344725beab9d6e17b60c98">Github Gist Source Code - Receive.py</a></li>
+<li><a href="https://gist.github.com/FernandoCelmer/b004afed646a0042719fd487aae27a2c">Github Gist Source Code - Send.py</a></li>
+</ul></p>
+    </article>
+</section>
+<!-- endblock -->
+            </main>
+                <!-- block preview -->
+<!-- endblock -->
+                <!-- block footer -->
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+        <div class="col-12 col-md">
+                <!-- block copyright -->
+    <small class="d-block mb-3">Fernando Celmer</small>
+
+    <small class="d-block mb-3">
+        Made with
+        <a href="https://github.com/FernandoCelmer/mkdocs-simple-blog" target="_blank" rel="noopener">
+            Simple Blog for MkDocs
+        </a>
+    </small>
+
+<!-- endblock -->
+        </div>
+    </div>
+</footer>
+<!-- endblock -->
+        </div>
+    
+        <script src="../../../../assets/js/jquery-3.3.1.slim.min.js""></script>
+        <script src="../../../../assets/js/bootstrap.bundle.min.js""></script>
+        <script src="../../../../assets/js/theme.js""></script>
+    </body>
+
+</html>

@@ -1,0 +1,325 @@
+<!doctype html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            
+            
+            <link rel="canonical" href="https://www.fernandocelmer.com/post/2022/03/app-python-django-mysql/">
+
+            
+                <link  rel="icon" type="image/x-icon" href="../../../../assets/favicon.ico">
+            
+            <title>App python django mysql - Fernando Celmer</title>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../../../assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="../../../../assets/stylesheets/theme.css">
+            <link rel="stylesheet" href="../../../../assets/stylesheets/styles.css">
+                <link href="../../../../css/extra.css" rel="stylesheet">
+            
+            
+                
+            
+    </head>
+
+    <body>
+        <div class="container py-3">
+            <header>
+                    <!-- block header -->
+<nav class="navbar navbar-expand-xl border-bottom">
+    <div class="container-fluid">
+        
+        <span class="fs-4 bold title-color site-name" id="title" style="text-transform: uppercase;">Fernando Celmer</span>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+            aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+            <ul class="navbar-nav">
+                <!-- block menu -->
+                <li class="nav-item">
+                    <!-- block menu -->
+<li class="nav-item">
+    <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="
+                    nav-link text-gray text-decoration-none" href="https://www.fernandocelmer.com/">[Home]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="
+                    nav-link text-gray text-decoration-none" href="../../../..">[Blog]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="
+                    nav-link text-gray text-decoration-none" href="../../../../projects/">[Projects]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="
+                    nav-link text-gray text-decoration-none" href="https://www.linkedin.com/in/fernando-celmer/">[About]</a>
+                </li>
+    </ul>
+</li>
+<!-- endblock -->
+                </li>
+                <!-- endblock -->
+
+                <!-- block source -->
+                <li class="nav-item">
+                    
+                </li>
+                <!--  endblock -->
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--  endblock -->
+            </header>
+
+            <main>
+                    <!-- block content -->
+<section class="container post">
+    <article>
+        <header>
+            <h1 class="title">App python django mysql</h1>
+        </header>
+        <p><p>02 DE MARÇO, 2022 [<strong>#03</strong>]</p>
+<hr />
+<h2 id="introducao">Introdução</h2>
+<p>Nesse tutorial vamos nos concentrar nessas cinco tecnologias abaixo para o desenvolvimento do nosso pequeno projeto de teste:</p>
+<ul>
+<li>Linux</li>
+<li>Python 3.9</li>
+<li>Django 4.0</li>
+<li>AWS Elastic Beantalk</li>
+<li>MySQL</li>
+</ul>
+<h2 id="1-estrutura-inicial">1 — Estrutura Inicial</h2>
+<h4 id="criacao-ambiente-de-desenvolvimento">Criação ambiente de desenvolvimento:</h4>
+<p>Vamos começar pelo mais básico de tudo que é criar nosso ambiente de desenvolvimento utilizando o virtualenv com os seguintes comandos abaixo. Estou trabalhando com sistema operação linux, distribuição Kubuntu, especificamente Ubuntu versão 21.10.</p>
+<pre><code>$ mkdir projects
+$ cd projects
+$ virtualenv -p python3.9 venv
+$ source venv/bin/activate
+</code></pre>
+<p>Para simplificar e deixar mais organizado eu criei um novo diretório no meu computador chamado <code>projects</code> onde será colocado o meu novo projeto. Essa etapa se você quiser pode pular e colocar o seu projeto em qualquer lugar.</p>
+<h4 id="instalacao-dos-requerimentos">Instalação dos Requerimentos</h4>
+<p>Esses são os requerimentos básicos para o nosso projeto funcionar tranquilamente. Após executar a instalação dos pacotes não se esqueça de gerar o arquivo de requerimentos do sistema.</p>
+<pre><code>(env) $ pip install django==4.0
+(env) $ pip install django-environ==0.8.1
+(env) $ pip install mysqlclient==2.1.0
+(env) $ pip install gunicorn==20.1.0
+</code></pre>
+<h4 id="criacao-estrutura-do-projeto-django">Criação Estrutura do Projeto Django</h4>
+<pre><code>(env) $ django-admin startproject application
+(env) $ cd application
+(env) $ python manage.py startapp hello
+</code></pre>
+<p>Se você chegou até aqui, muito bem! Então a sua aplicação deverá ter essa estrutura de pastas representadas aqui em baixo.</p>
+<pre><code>projects/
+│
+├── application/
+│   │
+│   ├── application/
+│   │   ├── __init__.py
+│   │   ├── asgi.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   │
+│   ├── hello/
+│   │   ├── migrations/
+│   │   │   ├── __init__.py
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   └──  views..py
+│   ├── manage.py
+│
+└── vemv/
+</code></pre>
+<p>Nesse ponto, a nossa aplicação já pode ser executado local, colocando o seguinte comando <code>python manage.py runserver</code> no seu terminal.</p>
+<p>Como nós ainda não realizamos a configuração do Banco de Dados <strong>MySQL</strong>, o <strong>Django</strong> traz configurações padrão para o banco de dados sqlite. Então ao executar a aplicação, será gerado automaticamente um arquivo <code>db.sqlite3</code> dentro do projeto.</p>
+<p>Nessa primeira execução você verá uma mensagem de alerta em vermelho representado na <strong>Imagem-01</strong>.</p>
+<p><center></p>
+<p><img alt="Imagem-01 - Terminal" src="../x_img_03_01.png" /></p>
+<p><strong>Imagem-01 - Terminal</strong></p>
+<p></center></p>
+<p>IMAGEM-01 — Mensagem de alerta: You have 18 unapplied migration(s).</p>
+<blockquote>
+<p>You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, &gt; auth, contenttypes, sessions. Run ‘python manage.py migrate’ to apply them.</p>
+</blockquote>
+<p>Esse alerta quer dizer que à 18 (dezoito) migrações não aplicadas no seu projeto. Essas migrações são referente ao painel padrão de administração do <strong>Django</strong>. Para testar, podemos executar o comando <code>python manage.py</code> migrate para ser aplicado todas as migrações de tabelas do painel de controle do <strong>Django</strong>. Enquanto não configuramos nosso banco <strong>MySQL</strong>, essas migrações serão aplicados localmente no nosso banco <strong>sqlite</strong>.</p>
+<p><center></p>
+<p><img alt="IMAGEM-02 — Página inicial Django" src="../x_img_03_02.png" /></p>
+<p><strong>IMAGEM-02 — Página inicial Django</strong></p>
+<p></center></p>
+<h4 id="criacao-das-variaveis-de-ambiente-arquivo-env">Criação das Variáveis de Ambiente (Arquivo .env)</h4>
+<p>As variáveis de ambiente são uma peça chave para o nosso projeto ser bem estrutura e também ter um nível básico de segurança. É nas nossas variáveis de ambiente que ficam guardadas informações criticas da aplicação como por exemplo, acesso ao banco de dados, senhas, chaves privadas. Vamos criar um arquivo <code>.env</code> com as seguintes configurações:</p>
+<blockquote>
+<p>PATH — /projects/application/.env</p>
+</blockquote>
+<pre><code>DJANGO_DEBUG=True
+DJANGO_ENV=development
+DJANGO_DATABASE_URL=mysql://USER:PASSWORD@HOST:PORT/NAME
+DJANGO_SECRET_KEY=key
+DJANGO_HOST=0.0.0.0
+DJANGO_PORT=8080
+DJANGO_ALLOWED_HOSTS=localhost
+DISABLE_COLLECTSTATIC=1
+</code></pre>
+<h4 id="implementacao-arquivo-de-configuracao-django">Implementação arquivo de Configuração Django</h4>
+<p>Vamos fazer algumas alterações no arquivo <code>settings.py</code> para que o projeto fique adequado para deploy em um ambiente de produtoção. Então abra o arquivo no seu editor de texto preferido e adicione as seguintes linhas:</p>
+<blockquote>
+<p>PATH — /projects/application/application/settings.py</p>
+</blockquote>
+<pre><code>import os
+from pathlib import Path
+APP_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
+CONTENT_DIR = os.path.join(BASE_DIR, 'content')
+</code></pre>
+<p>Substitua as variaveis com informações sensíveis para buscar esses dados no arquivo <code>.env</code> e não diretamente no código fonte.</p>
+<pre><code>SECRET_KEY = os.getenv(&quot;DJANGO_SECRET_KEY&quot;)
+ALLOWED_HOSTS = [os.getenv(&quot;DJANGO_ALLOWED_HOSTS&quot;)]
+</code></pre>
+<p>Altere as configurações de templates, adicionando um caminho padrão para a aplicação.</p>
+<pre><code>TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+                os.path.join(CONTENT_DIR, 'templates'),
+            ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+</code></pre>
+<h4 id="gerando-staticfiles">Gerando StaticFiles</h4>
+<p>Crie um nova pasta dentro do diretório da aplicação chamado <code>content .</code> Esse será o local onde estará os nossos arquivos estáticos do projeto.</p>
+<blockquote>
+<p>PATH — /projects/application/content PATH — /projects/application/content/assets</p>
+</blockquote>
+<pre><code>(venv) $ cd project/application
+(venv) $ mkdir content
+(venv) $ cd content
+(venv) $ mkdir assets
+</code></pre>
+<p>Após criar a pasta <code>content</code>, volte para o arquivo de configuração <code>settings.py</code> e faça mais algumas implementações.</p>
+<blockquote>
+<p>PATH — /projects/application/application/settings.py</p>
+</blockquote>
+<pre><code>STATIC_ROOT = os.path.join(CONTENT_DIR, 'staticfiles')
+STATIC_URL = '/content/static/'
+MEDIA_ROOT = os.path.join(CONTENT_DIR, 'media')
+MEDIA_URL = '/content/media/'
+STATICFILES_DIRS = [
+    os.path.join(CONTENT_DIR, 'assets'),
+]
+LOCALE_PATHS = [
+    os.path.join(CONTENT_DIR, 'locale')
+]
+</code></pre>
+<p>Se você terminou essa parte, então já consegue executar o comando para geração dos arquivos estáticos <code>python manage.py collectstatic</code>.</p>
+<h4 id="configuracao-procfile-conf-aws">Configuração Procfile - (Conf AWS)</h4>
+<blockquote>
+<p>PATH — /projects/application/Procfile</p>
+</blockquote>
+<p>Antes de iniciar adicionar o nosso arquivo de configuração para AWS, vamos instalar um cara chamado gunicorn com o seguinte comando <code>sudo apt install gunicorn</code>. Gunicorn (‘Green Unicorn’) é um servidor WSGI para Unix feito em Python puro. Ele não tem depedências e é fácil de instalar e usar.</p>
+<p>Crie um novo arquivo chamado Procfile no mesmo nível em que está o arquivo <code>manage.py</code> e adicione a seguinte linha de código que está abaixo:</p>
+<pre><code>web: gunicorn application.wsgi:application --log-file - --log-level debug
+</code></pre>
+<h4 id="geracao-de-requirimentos-da-aplicacao">Geração de Requirimentos da aplicação</h4>
+<blockquote>
+<p>PATH — /projects/application/requirements.txt</p>
+</blockquote>
+<pre><code>(env) $ pip freeze &gt; requirements.txt
+</code></pre>
+<h2 id="2-banco-de-dados">2 — Banco de Dados</h2>
+<h4 id="criando-um-banco-de-dados-mysql-gratis">Criando um Banco de Dados MySQL Grátis</h4>
+<p>Primeiro acesse o link <a href="https://www.db4free.net/">db4Free</a> para criar uma conta gratuitamente e ter acesso a um banco de dados <strong>MySQL</strong> para teste. O cadastro é bem simples, basta preencher as informações básicos do banco como Nome do banco, Nome de usuário, Senha e E-mail.</p>
+<p><center></p>
+<p><img alt="IMAGEM-03 — Página de Cadastro db4free" src="../x_img_03_03.png" /></p>
+<p><strong>IMAGEM-03 — Página de Cadastro db4free</strong></p>
+<p></center></p>
+<p>Após preencher todas as informações é só clicar em <strong>Cadastre-se</strong> e verificar o seu e-mail na sua caixa de entrada. Lá você receberá informações adicionais de conexão ao banco e de como acessa-lo posteriormente pelo <strong>PHPAdmin</strong>.</p>
+<p><center></p>
+<p><img alt="IMAGEM-04 — Página db4free após a realização do cadastro" src="../x_img_03_04.png" /></p>
+<p><strong>IMAGEM-04 — Página db4free após a realização do cadastro</strong></p>
+<p></center></p>
+<h4 id="configurando-django-mysql">Configurando Django + MySQL</h4>
+<p>Para realizarmos configuração da conexão do banco de dados <strong>MySQL</strong> vamos utilizar um pacote chamado <code>dj_database_url</code>. Antes de tudo podemos instalar ele com o comando descrito abaixo e também podemos adiciona-lo em nosso arquivo de requerimentos.</p>
+<pre><code>(env) $ pip install dj-database-url==0.5.0
+</code></pre>
+<p>Após realizar a instalação do pacote, vamos editar o arquivo settings.py, para realizar a importação de <code>dj_database_url</code>.</p>
+<blockquote>
+<p>PATH — /projects/application/settings.py</p>
+</blockquote>
+<pre><code>import dj_database_url
+</code></pre>
+<p>E adicionamos também esse trecho de código que realiza a inserção da URL do banco de dados de acordo com as informações que estão no nosso arquivo .env no parametro <code>DJANGO_DATABASE_URL</code>.</p>
+<pre><code>DATABASES = {
+'default': dj_database_url.config(default=os.getenv(&quot;DJANGO_DATABASE_URL&quot;))
+}
+</code></pre>
+<p>Quando você terminar de adicionar essas configurações acima, podemos testar novamente a aplicação executando o comando para realizar as migrações <code>python manage.py migrate</code> do banco de dados no novo host <strong>MySQL</strong>.</p>
+<p><center></p>
+<p><img alt="IMAGEM-05 — Resultado do comando python manage.py migrate." src="../x_img_03_05.png" /></p>
+<p><strong>IMAGEM-05 — Resultado do comando python manage.py migrate.</strong></p>
+<p></center></p>
+<p><center></p>
+<p><img alt="IMAGEM-06 — Visualização no PHPAdmin das tabelas padrão do Django." src="../x_img_03_06.png" /></p>
+<p><strong>IMAGEM-06 — Visualização no PHPAdmin das tabelas padrão do Django.</strong></p>
+<p></center></p>
+<p>Show! Agora o nosso projeto django já está com a configuração básica para funcionar em produção.</p>
+<hr />
+<p><strong>Mais informações</strong></p>
+<ul>
+<li><a href="https://github.com/FernandoCelmer/project-django-aws-elastic-beanstalk">Github Project</a></li>
+</ul></p>
+    </article>
+</section>
+<!-- endblock -->
+            </main>
+                <!-- block preview -->
+<!-- endblock -->
+                <!-- block footer -->
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+        <div class="col-12 col-md">
+                <!-- block copyright -->
+    <small class="d-block mb-3">Fernando Celmer</small>
+
+    <small class="d-block mb-3">
+        Made with
+        <a href="https://github.com/FernandoCelmer/mkdocs-simple-blog" target="_blank" rel="noopener">
+            Simple Blog for MkDocs
+        </a>
+    </small>
+
+<!-- endblock -->
+        </div>
+    </div>
+</footer>
+<!-- endblock -->
+        </div>
+    
+        <script src="../../../../assets/js/jquery-3.3.1.slim.min.js""></script>
+        <script src="../../../../assets/js/bootstrap.bundle.min.js""></script>
+        <script src="../../../../assets/js/theme.js""></script>
+    </body>
+
+</html>
