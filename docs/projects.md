@@ -8,6 +8,10 @@
 - [this-is-python](https://github.com/FernandoCelmer/this-is-python) - Working
 - [dotfiles](https://github.com/FernandoCelmer/dotfiles) - Working
 
+#### I help to maintain
+- [django-global-permissions](https://github.com/eduardo-matos/django-global-permissions)
+- [mkdocs-dracula-theme](https://github.com/dracula/mkdocs)
+
 #### Experiment
 - [project-basic-test-sqlalchemy](https://github.com/FernandoCelmer/project-basic-test-sqlalchemy) - Experiment
 - [project-basic-test-fastapi](https://github.com/FernandoCelmer/project-basic-test-fastapi) - Experiment
@@ -36,9 +40,3 @@
 - [upy-process](https://github.com/UpyExplorer/upy-process) - is no longer updated
 - [upy-api](https://github.com/UpyExplorer/upy-api) - is no longer updated
 
-#### I help to maintain
-- [django-global-permissions](https://github.com/eduardo-matos/django-global-permissions)
-
-#### Others
-- [project-api-cep-aberto](https://github.com/FernandoCelmer/project-api-cep-aberto)
-- [project-basic-php-framework](https://github.com/FernandoCelmer/project-basic-php-framework)
