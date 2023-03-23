@@ -1,6 +1,13 @@
 # Blog Fernando Celmer
 
 ## Commit Style
-- ⚙️ NO-TASK
-- 📝 TEXT
+
+- ⚙️ FEATURE
+- 📝 PEP8
+- 📌 ISSUE
+- 🪲 BUG
 - 📘 DOCS
+- 📦 PyPI
+- ❤️️ TEST
+- ⬆️ CI/CD
+- ⚠️ SECURITY
