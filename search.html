@@ -7,21 +7,21 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            <meta name="description" content="None">
-            <link rel="canonical" href="https://www.fernandocelmer.com/">
+            
+            
             
 
             
-                <link  rel="icon" type="image/x-icon" href="assets/favicon.ico">
+                <link  rel="icon" type="image/x-icon" href="./assets/favicon.ico">
             
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
                         <script>hljs.initHighlightingOnLoad();</script>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-            <link rel="stylesheet" href="assets/stylesheets/theme.css">
-            <link rel="stylesheet" href="assets/stylesheets/styles.css">
-                <link href="css/extra.css" rel="stylesheet">
+            <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="./assets/stylesheets/theme.css">
+            <link rel="stylesheet" href="./assets/stylesheets/styles.css">
+                <link href="./css/extra.css" rel="stylesheet">
 
             
                 
@@ -58,12 +58,12 @@
                             nav-link text-gray text-decoration-none" href="https://www.fernandocelmer.com/">[Home]</a>
                         </li>
                         <li class="nav-item">
-                            <a class=" active 
-                            nav-link text-gray text-decoration-none" href=".">[Blog]</a>
+                            <a class="
+                            nav-link text-gray text-decoration-none" href="./.">[Blog]</a>
                         </li>
                         <li class="nav-item">
                             <a class="
-                            nav-link text-gray text-decoration-none" href="projects/">[Projects]</a>
+                            nav-link text-gray text-decoration-none" href="./projects/">[Projects]</a>
                         </li>
                         <li class="nav-item">
                             <a class="
@@ -107,40 +107,31 @@
     </div>
 </div>
 <!-- endblock -->
-                    <!-- block content -->
-<section class="container post">
-    <article>
-        <header>
-            
-                <h1 class="bold title" id="component-title">Blog</h1>
-            
-        </header>
-        <p><p><center></p>
-<p><strong>10 de Julho, 2022</strong> - <a href="post/2022/07/script-para-deploy-de-api-na-aws-lambda/">SCRIPT PARA DEPLOY AWS LAMBDA</a></p>
-<p><strong>02 de Março, 2022</strong> - <a href="post/2022/03/app-python-django-mysql/">APP PYTHON/DJANGO + MYSQL</a></p>
-<p><strong>01 de Março, 2022</strong> - <a href="post/2022/03/introducao-ao-rabbitmq-python/">INTRODUÇÃO AO RABBITMQ + PYTHON</a></p>
-<p><strong>20 de Fevereiro, 2022</strong> - <a href="post/2022/02/informacoes-basicas-de-docker/">INFORMAÇÕES BÁSICAS DE DOCKER</a></p>
-<p></center></p></p>
-    </article>
-</section>
-<!-- endblock -->
+    <!-- block search -->
+	<section class="p-md-5 content-search">
+		<article class="search-box">
+			<p></p>
+			<h1 id="search">Search Results</h1>
+			<hr>
+
+			<form id="content_search" action="search.html">
+				<span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+				<input name="q" id="mkdocs-search-query" type="text" class="search-query search_input search-query ui-autocomplete-input"
+					placeholder="Search the Docs" autocomplete="off" autofocus title="Type search term here">
+			</form>
+
+			<div id="mkdocs-search-results" class="search-results" data-no-results-text="No results found">
+				Searching...
+			</div>
+
+		</article>
+	</section>
+    <!-- endblock -->
+
             </main>
 
             
                     <!-- block preview -->
-        <div class="row row-cols-md-3 text-center pt-md-3" id="component-preview">
-            <div class="col themed-grid-col">
-                <a rel="prev" class="nav-link disabled">
-                    <i class="fa fa-arrow-left"></i> Previous
-                </a>
-            </div>
-            <div class="col themed-grid-col"></div>
-            <div class="col themed-grid-col">
-                <a rel="next" href="projects/" class="nav-link">
-                    Next <i class="fa fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
 <!-- endblock -->
             
 
@@ -168,11 +159,11 @@
         </div>
 
             <script>var base_url = '.';</script>
-            <script src="assets/js/jquery-3.3.1.slim.min.js""></script>
-            <script src="assets/js/bootstrap.bundle.min.js""></script>
-            <script src="assets/js/theme.js""></script>
-                <script src="js/extra.js" defer></script>
-                <script src="search/main.js" defer></script>
+            <script src="./assets/js/jquery-3.3.1.slim.min.js""></script>
+            <script src="./assets/js/bootstrap.bundle.min.js""></script>
+            <script src="./assets/js/theme.js""></script>
+                <script src="./js/extra.js" defer></script>
+                <script src="./search/main.js" defer></script>
 
     </body>
 
