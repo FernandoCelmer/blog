@@ -1,4 +1,4 @@
-Update on March 23, 2023
+Update on April 10, 2023
 
 ---
 
@@ -24,6 +24,9 @@ Update on March 23, 2023
 #### LinuxProfile
 - [linux-profile](https://github.com/MyLinuxProfile/linux-profile) - [**🐧 Linux Profile Management CLI Tool**]
 - [linux-profile-plugin](https://github.com/MyLinuxProfile/linux-profile-plugin) - [**🐧 Plugin Linux Profile**]
+- [linux-profile-api](https://github.com/linux-profile/linux-profile-api) - [**🐧 API Linux Profile**]
+- [linux-i3](https://github.com/linux-profile/i3) - [🐧 Theme for i3]
+- [linux-ui](https://github.com/linux-profile/ui) - [🐧 Collection of UI patterns and components]
 - [linux-profile-test](https://github.com/MyLinuxProfile/linux-profile-api-test) - Test project, is not updated
 - [linux-profile-api-test](https://github.com/MyLinuxProfile/linux-profile-test) - Test project, is not updated
 
@@ -34,6 +37,7 @@ Update on March 23, 2023
 - [indexoffy_api](https://github.com/IndexOffy/indexoffy_api) - is no longer updated
 
 #### UpyExplorer
+- [upy-application](https://github.com/UpyExplorer/upy-application) - [**🚀 Web Platform**]
 - [upy-rabbitmq](https://github.com/UpyExplorer/upy-rabbitmq) - [**🗂 Simple Python Package**]
 - [upy-error](https://github.com/UpyExplorer/upy-error) - [**🗂 Simple Python Package**]
 - [upy-service](https://github.com/UpyExplorer/upy-service) - is no longer updated
