@@ -4,48 +4,54 @@ import ftplib
 try:
     from dotenv import load_dotenv
     load_dotenv()
-except:
+except Exception:
     pass
 
-ftp_host = os.environ.get("FTP_HOST")
-ftp_username = os.environ.get("FTP_USERNAME")
-ftp_password = os.environ.get("FTP_PASSWORD")
-ftp_path = os.environ.get("FTP_PATH")
+FTP_HOST = os.environ.get("FTP_HOST")
+FTP_USERNAME = os.environ.get("FTP_USERNAME")
+FTP_PASSWORD = os.environ.get("FTP_PASSWORD")
+FTP_PATH = os.environ.get("FTP_PATH")
 
 
-def ftp_connect():
-    session = ftplib.FTP(ftp_host, ftp_username, ftp_password)
-    return session
+def ftp_connect() -> ftplib.FTP:
+    return ftplib.FTP(
+        host=FTP_HOST,
+        user=FTP_USERNAME,
+        passwd=FTP_PASSWORD
+    )
 
 
-def ftp_run():
+def ftp_run() -> None:
     session = ftp_connect()
+
     try:
-        session.mkd(ftp_path)
+        session.mkd(FTP_PATH)
     except Exception:
         pass
 
-    file = open('index.html','rb')
-    session.storbinary(f'STOR index.html', file)
+    _file = open('index.html', 'rb')
+    session.storbinary('STOR index.html', _file)
 
     for currentpath, folders, files in os.walk('blog'):
-        host_path = currentpath.replace("blog", ftp_path)
+        host_path = currentpath.replace("blog", FTP_PATH)
 
         for folder in folders:
             path_folder = os.path.join(host_path, folder)
             print(f"---{path_folder}")
+
             try:
                 session.mkd(path_folder)
             except Exception:
                 pass
 
-        for file in files:
-            path_file = os.path.join(currentpath, file)
-            host_file = os.path.join(host_path, file)
+        for _file in files:
+            path_file = os.path.join(currentpath, _file)
+            host_file = os.path.join(host_path, _file)
             print(f"   |___{host_file}")
+
             try:
-                file = open(path_file,'rb')
-                session.storbinary(f'STOR {host_file}', file)
+                _file = open(path_file, 'rb')
+                session.storbinary(f'STOR {host_file}', _file)
             except Exception:
                 pass
 
