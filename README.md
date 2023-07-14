@@ -7,7 +7,7 @@
 - 📌 ISSUE
 - 🪲 BUG
 - 📘 DOCS
-- 📦 PyPI
+- 📦 BUILD
 - ❤️️ TEST
 - ⬆️ CI/CD
 - ⚠️ SECURITY
