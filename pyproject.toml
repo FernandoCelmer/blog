@@ -8,8 +8,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-mkdocs = "^1.4.3"
-mkdocs-simple-blog = "^0.0.8"
+mkdocs = "1.5.2"
+mkdocs-simple-blog = "0.0.9"
 python-dotenv = "^1.0.0"
 
 
