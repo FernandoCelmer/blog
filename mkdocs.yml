@@ -7,6 +7,7 @@ nav:
     - Blog: index.md
     - Projects: projects.md
     - About: https://www.linkedin.com/in/fernando-celmer/
+    - Yes Hello: post/2023/12/yes-hello.md
 
 theme:
   name: simple-blog
