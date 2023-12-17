@@ -5,7 +5,7 @@
 ---
 
 - **Blog**: [https://www.fernandocelmer.com/blog](https://www.fernandocelmer.com/blog)
-- **Projects**: [hhttps://www.fernandocelmer.com/blog/projects](hhttps://www.fernandocelmer.com/blog/projects)
+- **Projects**: [https://www.fernandocelmer.com/blog/projects](https://www.fernandocelmer.com/blog/projects)
 
 ---
 
