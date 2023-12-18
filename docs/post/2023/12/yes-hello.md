@@ -4,7 +4,7 @@ DECEMBER 17, 2023
 
 ## It's okay to say 'hello' without any subject
 
-> Time is not money. Time is the tissue of our life - **AntônioCandido**
+> **AntônioCandido** - 'Time is money', that's a monstrosity. Time is not money, time is the tissue of our life.
 
 You don't necessarily need to have a very important topic or question to send a **'Hi, How are you?'** to a coworker on Slack or Discord. No one is so busy that they can't stop for 5 minutes to respond to **'Good Morning'**. Today we live in a tired society where everything is very fast and our time is considered money, because no, it's not like that, not everything is profit.
 
