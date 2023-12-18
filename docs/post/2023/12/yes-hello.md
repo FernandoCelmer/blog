@@ -12,7 +12,7 @@ So give yourself at least a minute to wait and reply **'Good Morning!'**, it doe
 
 ### Basic tutorial on how not to be a robot:
 
-- `9:34 Arthur Dent:` Hi Arthur, how are you?
+- `9:34 Arthur Dent:` Hi Ford, how are you?
 - `9:35 Ford Prefect:` Yes, everything is fine!
 - `9:40 Arthur Dent:` Ok then :)
 
