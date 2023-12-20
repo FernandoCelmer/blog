@@ -4,11 +4,11 @@ DECEMBER 17, 2023
 
 ## It's okay to say 'hello' without any subject
 
-> **AntônioCandido** - 'Time is money', that's a monstrosity. Time is not money, time is the tissue of our life.
+> 'Time is money', that's a monstrosity. Time is not money, time is the tissue of our life. - **AntônioCandido** 
 
-You don't necessarily need to have a very important topic or question to send a **'Hi, How are you?'** to a coworker on Slack or Discord. No one is so busy that they can't stop for 5 minutes to respond to **'Good Morning'**. Today we live in a tired society where everything is very fast and our time is considered money, but no, it's not like that, not everything is profit.
+You don’t necessarily need to have a very important topic or question to send a **‘Hi, How are you?’** to a co-worker on Slack or Discord. No one is so busy that they can't stop for 5 minutes to respond to **'Good Morning'**.
 
-So give yourself at least a minute to wait and reply **'Good Morning!'**, it won't interfere with anything.
+Today we live in a tired society where everything is very fast and our time is considered money, but this is not the case, not everything is profit. So, take at least a minute to wait and reply **‘Good morning!’**, it won’t interfere with anything.
 
 ### Basic Tutorial:
 
