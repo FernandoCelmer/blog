@@ -12,8 +12,8 @@ Update on April 10, 2023
 
 #### Dotflow
 
-- [dotflow](https://github.com/dotflow-io/dotflow)
-- [dotflow-server](https://github.com/dotflow-io/dotflow-server)
+- [dotflow](https://github.com/dotflow-io/dotflow) [** 🎲 Dotflow turns an idea into flow! **]
+- [dotflow-server](https://github.com/dotflow-io/dotflow-server) [** 🎲 Dotflow Server**]
 
 #### I help to maintain
 - [django-global-permissions](https://github.com/eduardo-matos/django-global-permissions)
