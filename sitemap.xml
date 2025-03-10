@@ -2,37 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://www.fernandocelmer.com/</loc>
-         <lastmod>2023-07-14</lastmod>
+         <lastmod>2025-03-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.fernandocelmer.com/projects/</loc>
-         <lastmod>2023-07-14</lastmod>
+         <lastmod>2025-03-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.fernandocelmer.com/writing/</loc>
-         <lastmod>2023-07-14</lastmod>
+         <lastmod>2025-03-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.fernandocelmer.com/post/2022/02/informacoes-basicas-de-docker/</loc>
-         <lastmod>2023-07-14</lastmod>
+         <lastmod>2025-03-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.fernandocelmer.com/post/2022/03/app-python-django-mysql/</loc>
-         <lastmod>2023-07-14</lastmod>
+         <lastmod>2025-03-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.fernandocelmer.com/post/2022/03/introducao-ao-rabbitmq-python/</loc>
-         <lastmod>2023-07-14</lastmod>
+         <lastmod>2025-03-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.fernandocelmer.com/post/2022/07/script-para-deploy-de-api-na-aws-lambda/</loc>
-         <lastmod>2023-07-14</lastmod>
+         <lastmod>2025-03-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.fernandocelmer.com/post/2023/12/yes-hello/</loc>
+         <lastmod>2025-03-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
