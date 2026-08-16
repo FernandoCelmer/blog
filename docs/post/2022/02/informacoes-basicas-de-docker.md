@@ -1,5 +1,6 @@
 ---
 title: Informações básicas de Docker
+description: Conceitos básicos de Docker — diferença entre servidor físico, máquina virtual e container, e comandos essenciais.
 date: 2022-02-20
 updated: 2022-02-20
 category: DevOps

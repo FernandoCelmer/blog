@@ -1,5 +1,6 @@
 ---
 title: Yes Hello!
+description: Why saying a simple 'hi' before jumping into a work topic on Slack or Discord still matters.
 date: 2023-12-17
 updated: 2024-03-20
 category: Geral

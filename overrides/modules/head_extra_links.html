@@ -1,0 +1,33 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Fernando Celmer",
+  "url": "https://fernandocelmer.com",
+  "email": "mailto:email@fernandocelmer.com",
+  "sameAs": [
+    "https://github.com/FernandoCelmer",
+    "https://www.linkedin.com/in/fernando-celmer/",
+    "https://pypi.org/user/fernandocelmer/"
+  ]
+}
+</script>
+
+{% if page and page.meta and page.meta.date and not page.is_homepage %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | tojson }},
+  {% if page.meta.description %}"description": {{ page.meta.description | tojson }},{% endif %}
+  "datePublished": {{ (page.meta.date | string) | tojson }},
+  "dateModified": {{ ((page.meta.updated or page.meta.date) | string) | tojson }},
+  "author": {
+    "@type": "Person",
+    "name": "Fernando Celmer",
+    "url": "https://fernandocelmer.com"
+  },
+  "mainEntityOfPage": {{ page.canonical_url | tojson }}
+}
+</script>
+{% endif %}

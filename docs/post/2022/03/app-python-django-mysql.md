@@ -1,5 +1,6 @@
 ---
 title: App Python/Django + MySQL
+description: Tutorial construindo uma aplicação de teste com Linux, Python 3.9, Django 4.0 e MySQL.
 date: 2022-03-02
 updated: 2022-03-02
 category: Python

@@ -1,5 +1,6 @@
 ---
 title: Script para deploy AWS Lambda
+description: Script para automatizar o deploy de uma API na AWS Lambda usando Amazon S3 para upload do projeto.
 date: 2022-07-10
 updated: 2022-07-10
 category: AWS

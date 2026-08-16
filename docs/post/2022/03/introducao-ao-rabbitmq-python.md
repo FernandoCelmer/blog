@@ -1,5 +1,6 @@
 ---
 title: Introdução ao RabbitMQ + Python
+description: Review sobre a ferramenta de mensageria RabbitMQ e como usá-la com Python.
 date: 2022-03-01
 updated: 2022-03-01
 category: Mensageria
