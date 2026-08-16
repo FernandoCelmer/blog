@@ -1,3 +1,12 @@
+---
+title: Introdução ao RabbitMQ + Python
+date: 2022-03-01
+category: Mensageria
+tags:
+  - python
+  - rabbitmq
+---
+
 01 DE MARÇO, 2022 [**#02**]
 
 ---

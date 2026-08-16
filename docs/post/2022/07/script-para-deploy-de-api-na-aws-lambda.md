@@ -1,3 +1,12 @@
+---
+title: Script para deploy AWS Lambda
+date: 2022-07-10
+category: AWS
+tags:
+  - aws
+  - lambda
+---
+
 10 DE JULHO, 2022 [**#4**]
 
 ---

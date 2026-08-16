@@ -1,3 +1,13 @@
+---
+title: App Python/Django + MySQL
+date: 2022-03-02
+category: Python
+tags:
+  - python
+  - django
+  - mysql
+---
+
 02 DE MARÇO, 2022 [**#03**]
 
 ---

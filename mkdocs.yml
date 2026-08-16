@@ -9,6 +9,11 @@ nav:
     - About: https://www.linkedin.com/in/fernando-celmer/
     - Yes Hello: post/2023/12/yes-hello.md
 
+plugins:
+  - search
+  - macros:
+      module_name: scripts/blog_macros
+
 theme:
   name: simple-blog
   favicon: assets/favicon.ico

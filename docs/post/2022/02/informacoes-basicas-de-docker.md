@@ -1,3 +1,11 @@
+---
+title: Informações básicas de Docker
+date: 2022-02-20
+category: DevOps
+tags:
+  - docker
+---
+
 20 DE FEVEREIRO, 2022 [**#01**]
 
 ---
