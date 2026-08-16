@@ -9,13 +9,22 @@ nav:
     - About: https://www.linkedin.com/in/fernando-celmer/
     - Yes Hello: post/2023/12/yes-hello.md
 
+hooks:
+  - hooks.py
+
 plugins:
   - search
   - macros:
       module_name: scripts/blog_macros
+  - git-revision-date-localized:
+      type: date
+      locale: en
+      enable_creation_date: true
+      fallback_to_build_date: true
 
 theme:
   name: simple-blog
+  custom_dir: overrides
   favicon: assets/favicon.ico
   theme_style: light
   site_name_style: normal

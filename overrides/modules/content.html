@@ -1,0 +1,21 @@
+<!-- block content -->
+<section class="container post" id="component-content">
+    <article>
+        <header>
+            {% if config.theme.components and config.theme.components.title == False %}
+            {% else %}
+                <h1 class="{{ config.theme.title_style }} title" id="component-title">{{ page.title }}</h1>
+            {% endif %}
+            {% set created = (page.meta.date | fmt_date) if page.meta.date else page.meta.git_creation_date_localized %}
+            {% set updated = (page.meta.updated | fmt_date) if page.meta.updated else page.meta.git_revision_date_localized %}
+            {% if created or updated %}
+            <p class="page-dates">
+                {% if created %}Created on {{ created }}{% endif %}
+                {% if updated and updated != created %} — updated on {{ updated }}{% endif %}
+            </p>
+            {% endif %}
+        </header>
+        <p>{{ page.content }}</p>
+    </article>
+</section>
+<!-- endblock -->
