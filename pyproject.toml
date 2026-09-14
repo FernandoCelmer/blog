@@ -1,7 +1,7 @@
 [tool.poetry]
 package-mode = false
 name = "blog"
-version = "0.1.0"
+version = "1.7.1"
 description = "Blog Fernando Celmer"
 authors = ["FernandoCelmer <email@fernandocelmer.com>"]
 license = "MIT"
