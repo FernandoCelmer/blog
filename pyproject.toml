@@ -11,7 +11,7 @@ readme = "README.md"
 python = "^3.11"
 mkdocs = "^1.6.1"
 mkdocs-simple-blog = "^0.4.3"
-python-dotenv = "^1.0.0"
+python-dotenv = "^1.2.2"
 mkdocs-macros-plugin = "^1.5.0"
 mkdocs-git-revision-date-localized-plugin = "^1.5.3"
 
